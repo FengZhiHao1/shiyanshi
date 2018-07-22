@@ -1,0 +1,49 @@
+package 实验室;
+import java.util.Random;
+import java.util.Scanner;
+public class 猜数字 {
+	private static String begin;
+	private static String shutdown;
+public static void main(String[] args) {
+	Scanner scanner=new Scanner(System.in);
+	String a = begin;//定义开始项
+	String b = shutdown;//定义结束项
+	Integer.valueOf("begin");
+	Integer.valueOf("shutdown");
+	int x =new Random().nextInt(100);//取0-100的数字生成随机数
+	System.out.println("welcome to 猜数字2.0版本");
+	System.out.println("您要猜的数字为："+x);
+	int x1=scanner.nextInt();
+	int x2=scanner.nextInt();//想用来实现执行输入字符的变量
+	if (x1 >= 0 && x1 <= 99) {
+        int i;
+        int count = 0;//用count实现次数并进行计数
+        for (i = 0; i < 100; i++) {
+            count++;
+            if (x1 > x) {
+                System.out.println("数字太大了！再猜！");
+                x1 = scanner.nextInt();
+            } 
+            else if (x1 < x) {
+                System.out.println("数字太小了！再猜！");
+                x1 = scanner.nextInt();
+            } 
+            else {
+                System.out.println("恭喜你，猜对了！");
+                System.out.println("你一共猜了" + count + "次");
+                int count1 = count + 1;
+                 if (count1 >= 2 && count1 <= 6) {
+                    System.out.println("不错，可以");
+                    break;
+                } else if (count1 > 6) {
+                    System.out.println("sb,滚！猜这么多次！");
+                    break;
+                }
+            }
+        }
+    }
+	else {
+        System.out.println("zz,请输入0~99的整数");
+}
+}
+}
